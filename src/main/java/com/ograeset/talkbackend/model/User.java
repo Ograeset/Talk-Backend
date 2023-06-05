@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Table(name =  "users")
 @Entity
 public class User {
@@ -12,7 +14,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String email;
+    private String userName;
 
     private String password;
 
@@ -21,8 +23,8 @@ public class User {
     public User() {
     }
 
-    public User(String email, String password) {
-        this.email = email;
+    public User(String userName, String password) {
+        this.userName = userName;
         this.password = password;
     }
 
@@ -36,12 +38,12 @@ public class User {
         this.id = id;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -50,5 +52,20 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Entry> entries;
+
+    public void setCredentialsNonExpired(boolean b) {
+    }
+
+    public void setAccountNonLocked(boolean b) {
+    }
+
+    public void setEnabled(boolean b) {
+    }
+
+    public void setAccountNonExpired(boolean b) {
     }
 }
