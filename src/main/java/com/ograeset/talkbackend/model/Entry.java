@@ -9,11 +9,7 @@ public class Entry {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String replyOne;
-
-    private String replyTwo;
-
-    private String replyThree;
+    private String reply;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -24,10 +20,8 @@ public class Entry {
     public Entry() {
     }
 
-    public Entry(String replyOne, String replyTwo, String replyThree, User user) {
-        this.replyOne = replyOne;
-        this.replyTwo = replyTwo;
-        this.replyThree = replyThree;
+    public Entry(String reply, User user) {
+        this.reply = reply;
         this.user = user;
     }
 
@@ -41,29 +35,14 @@ public class Entry {
         this.id = id;
     }
 
-    public String getReplyOne() {
-        return replyOne;
+    public String getReply() {
+        return reply;
     }
 
-    public void setReplyOne(String replyOne) {
-        this.replyOne = replyOne;
+    public void setReply (String reply) {
+        this.reply = reply;
     }
 
-    public String getReplyTwo() {
-        return replyTwo;
-    }
-
-    public void setReplyTwo(String replyTwo) {
-        this.replyTwo = replyTwo;
-    }
-
-    public String getReplyThree() {
-        return replyThree;
-    }
-
-    public void setReplyThree(String replyThree) {
-        this.replyThree = replyThree;
-    }
 
     public User getUser() {
         return user;
