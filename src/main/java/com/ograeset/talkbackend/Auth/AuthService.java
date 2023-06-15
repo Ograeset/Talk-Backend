@@ -3,7 +3,8 @@ package com.ograeset.talkbackend.Auth;
 import com.ograeset.talkbackend.config.JWTService;
 import com.ograeset.talkbackend.model.User;
 import com.ograeset.talkbackend.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,8 +12,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
-
 @Service
+@RequiredArgsConstructor
 public class AuthService {
 
     private final UserRepository userRepository;
@@ -20,19 +21,8 @@ public class AuthService {
     private final JWTService jwtService;
     private final AuthenticationManager authenticationManager;
 
-    @Autowired
-    public AuthService(UserRepository userRepository,
-                                 PasswordEncoder passwordEncoder,
-                                 JWTService jwtService,
-                                 AuthenticationManager authenticationManager) {
-        this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
-        this.jwtService = jwtService;
-        this.authenticationManager = authenticationManager;
-    }
-
     public AuthResponse register(RegisterRequest request) {
-        Optional<User> userOptional = userRepository.findUserByUsername(request.getUsername());
+        Optional<User> userOptional = userRepository.findUserByUserName(request.getUsername());
         if (userOptional.isPresent()){
             throw new IllegalStateException("username taken");
         }
