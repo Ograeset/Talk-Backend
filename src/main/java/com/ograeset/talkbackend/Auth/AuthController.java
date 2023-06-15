@@ -1,3 +1,4 @@
+/*
 package com.ograeset.talkbackend.Auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,3 +32,4 @@ public class AuthController {
         return ResponseEntity.ok(authService.register(request));
     }
 }
+*/

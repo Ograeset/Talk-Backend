@@ -1,3 +1,4 @@
+/*
 package com.ograeset.talkbackend.Auth;
 
 public class AuthResponse {
@@ -29,3 +30,4 @@ public class AuthResponse {
     }
 }
 
+*/

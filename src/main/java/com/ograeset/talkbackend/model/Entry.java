@@ -11,10 +11,6 @@ public class Entry {
 
     private String replyOne;
 
-    private String replyTwo;
-
-    private String replyThree;
-
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
@@ -26,8 +22,6 @@ public class Entry {
 
     public Entry(String replyOne, String replyTwo, String replyThree, User user) {
         this.replyOne = replyOne;
-        this.replyTwo = replyTwo;
-        this.replyThree = replyThree;
         this.user = user;
     }
 
@@ -49,21 +43,6 @@ public class Entry {
         this.replyOne = replyOne;
     }
 
-    public String getReplyTwo() {
-        return replyTwo;
-    }
-
-    public void setReplyTwo(String replyTwo) {
-        this.replyTwo = replyTwo;
-    }
-
-    public String getReplyThree() {
-        return replyThree;
-    }
-
-    public void setReplyThree(String replyThree) {
-        this.replyThree = replyThree;
-    }
 
     public User getUser() {
         return user;

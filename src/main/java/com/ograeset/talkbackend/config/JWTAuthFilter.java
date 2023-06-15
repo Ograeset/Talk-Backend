@@ -1,3 +1,4 @@
+/*
 package com.ograeset.talkbackend.config;
 
 import jakarta.servlet.FilterChain;
@@ -60,3 +61,4 @@ public class JWTAuthFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 }
+*/

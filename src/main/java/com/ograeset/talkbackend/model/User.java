@@ -2,8 +2,8 @@ package com.ograeset.talkbackend.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+/*import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;*/
 
 import java.util.Collection;
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Table(name =  "users")
 @Entity
-public class User implements UserDetails {
+public class User /*implements UserDetails */{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,14 +49,18 @@ public class User implements UserDetails {
         this.userName = userName;
     }
 
-    @Override
+    public String getPassword() {
+        return password;
+    }
+
+
+
+    /*@Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
     }
 
-    public String getPassword() {
-        return password;
-    }
+
 
     @Override
     public String getUsername() {
@@ -82,10 +86,11 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return false;
     }
-
+*/
     public void setPassword(String password) {
         this.password = password;
     }
+/*
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Entry> entries;
@@ -100,5 +105,6 @@ public class User implements UserDetails {
     }
 
     public void setAccountNonExpired(boolean b) {
-    }
+    }*/
 }
+

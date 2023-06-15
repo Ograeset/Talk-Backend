@@ -1,3 +1,4 @@
+/*
 package com.ograeset.talkbackend.config;
 
 import lombok.RequiredArgsConstructor;
@@ -47,3 +48,4 @@ public class SecurityConfig {
         return http.build();
     }
 }
+*/

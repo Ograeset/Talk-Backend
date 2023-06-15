@@ -1,3 +1,4 @@
+/*
 package com.ograeset.talkbackend.Auth;
 
 import com.ograeset.talkbackend.config.JWTService;
@@ -52,4 +53,4 @@ public class AuthService {
         var jwtToken = jwtService.generateToken((UserDetails) user);
         return new AuthResponse(jwtToken, user.toString());
     }
-}
+}*/

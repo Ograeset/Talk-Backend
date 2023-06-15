@@ -1,3 +1,4 @@
+/*
 package com.ograeset.talkbackend.Auth;
 
 public class RegisterRequest {
@@ -30,3 +31,4 @@ public class RegisterRequest {
     }
 
 }
+*/

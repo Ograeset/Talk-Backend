@@ -1,3 +1,4 @@
+/*
 package com.ograeset.talkbackend.config;
 
 import io.jsonwebtoken.Claims;
@@ -72,3 +73,4 @@ public class JWTService {
         return Keys.hmacShaKeyFor(keyBytes);
     }
 }
+*/

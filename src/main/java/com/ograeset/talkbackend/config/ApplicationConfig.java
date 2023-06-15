@@ -1,3 +1,4 @@
+/*
 package com.ograeset.talkbackend.config;
 
 import com.ograeset.talkbackend.repository.UserRepository;
@@ -53,3 +54,4 @@ public class ApplicationConfig {
     }
 
 }
+*/
